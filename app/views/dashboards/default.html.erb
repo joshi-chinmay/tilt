@@ -2,14 +2,111 @@
   <!-- lead dashboard layout start -->
   <div class="row">
     <!-- left section start -->
-    <div class="col-sm-8 col-md-8 col-lg-8 p-4">
-      posts
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 p-4">
+      <div class="threads-container">
+        <% 4.times do %>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card thread">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <i class="mdi mdi-music-circle"></i> Song Title goes here
+                    <div class="dropdown" style="float: right;">
+                      <a class="p-2 text-dark bg-white btn-sm dropdown-toggle" id="settingsDropdown" data-toggle="dropdown" aria-expanded="false">
+                        <i class="mdi mdi-settings"></i>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown">
+                        <a class="dropdown-item" href="javascript:;">Edit</a>
+                      </div>
+                    </div>
+                  </h5>
+                  <div class="tags">
+                    <button type="button" class="btn thread-btn-sm btn-secondary btn-sm border disabled">
+                      Genre Type
+                    </button>
+                    <button type="button" class="btn bg-white btn-sm border thread-btn-sm">#hashtag1</button>
+                    <button type="button" class="btn bg-white btn-sm border thread-btn-sm">#hashtag2</button>
+                  </div>
+                  <hr />
+                  <div class="card-text thread-description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </div>
+                  <hr />
+                  <div class="thread-actions">
+                    <button type="button" class="disabled btn bg-white btn-sm border pull-right">
+                      <%= Time.now.strftime("%d/%m/%Y %I:%M %p") %>
+                    </button>
+                    <button type="button" class="btn bg-white btn-sm border">
+                      <i class="mdi mdi-book-open-page-variant"></i> Read thread
+                    </button>
+                    <button type="button" class="btn bg-white btn-sm border">
+                      <i class="mdi mdi-thumb-up-outline"></i> Likes
+                    </button>
+                    <button type="button" class="btn bg-white btn-sm border">
+                      <i class="mdi mdi-comment-outline"></i> Comments
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="horizontal-padder"></div>
+
+        <% end %>
+
+        <div class="row">
+          <div class="col-md-12">
+            <a href="javascript:;">
+              <div class="card thread text-center">
+                <div class="card-body">
+                  Click here to load more...
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- left section end -->
 
     <!-- right section start -->
-    <div class="col-sm-4 col-md-4 col-lg-4 p-4 border-left default-right-pane-height">
-      featured tags
+    <div class="d-none d-md-block col-sm-3 col-md-3 col-lg-3 p-4">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card thread">
+            <div class="card-body">
+              <p class="card-title">Featured Tags</p>
+              <hr />
+              <div class="tags">
+                <% 15.times do %>
+                  <button type="button" class="btn bg-white btn-sm border thread-btn-sm">#<%= (0...4).map { (65 + rand(5)).chr }.join %></button>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="horizontal-padder"></div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card thread">
+            <div class="card-body">
+              <p class="card-title">Featured Posts</p>
+              <hr />
+              <% 4.times do |i| %>
+                <div class="row pb-2">
+                  <div class="col-md-12">
+                    <%= i + 1 %>. <a href="javascript:;">Song <%= (0...4).map { (65 + rand(5)).chr }.join %> goes here</a>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- right section end -->
   </div>

@@ -1,0 +1,32 @@
+@import "variables";
+@import "bootstrap/bootstrap";
+@import "mdi/materialdesignicons";
+
+.dashboard-container {
+  padding: 0px;
+}
+.dashboard-right-pane-fixed {
+  position: fixed;
+  top: 102px;
+  bottom: 0;
+  right: 0;
+}
+.dropdown-item:active {
+  background-color: $gray-600;
+}
+
+.thread {
+  border: 0;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+.thread-btn-sm {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+.thread-description {
+  font-size: 14px;
+}
+.horizontal-padder {
+  padding: 20px;
+}
