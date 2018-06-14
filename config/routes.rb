@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   get "templates", to: "templates#index"
+  get "templates/forms", to: "templates#forms"
 
 end
